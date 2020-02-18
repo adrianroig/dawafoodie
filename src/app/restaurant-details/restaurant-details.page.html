@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="tabs"></ion-back-button>
+      </ion-buttons>
+  <ion-title class="titulo">{{name}}</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-img class="foto" src="https://picsum.photos/200"></ion-img>  
+  <p class="center"> {{type}} </p>
+  <p class="center"> District: {{district}} </p>
+  <p class="center"> Price: {{price}} </p>
+  <p class="comments"> Comments: {{comments}} </p>
+  <p *ngIf="visitado" class="center"> Visited </p>
+  <p *ngIf="visitado" class="comments"> Opinion: {{opinion}} </p>
+
+</ion-content>

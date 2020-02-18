@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Back'" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="inputs email">
+    <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <p class="check">{{erroremail}}</p>
+
+  <ion-item class="inputs password">
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <p class="check">{{errorpass}}</p>
+
+  <ion-item class="inputs password2">
+    <ion-input type="password" placeholder="Repeat Password" [(ngModel)]="password2"></ion-input>
+  </ion-item>
+
+  <p class="check">{{passdistinto}}</p>
+
+  <ion-button expand="block" (click)="register()">REGISTER</ion-button>
+</ion-content>

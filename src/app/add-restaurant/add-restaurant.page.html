@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add restaurant</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [text]='Back' defaultHref="tabs"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="stacked"> Name of restaurant </ion-label>
+    <ion-input [(ngModel)]="name" type="text"></ion-input>
+  </ion-item>
+  <p class="error"> The name is empty </p>
+
+  <ion-item>
+    <ion-label position="stacked"> District </ion-label>
+    <ion-input [(ngModel)]="district" type="text"></ion-input>
+  </ion-item>
+
+  <p class="error"> The district is empy </p>
+
+  
+
+<ion-list class="lista_tipo">
+  <ion-radio-group [(ngModel)]="type">
+    <ion-list-header>
+      Type:
+    </ion-list-header>
+
+    <ion-item class="radio">
+      <ion-label>Burger</ion-label>
+      <ion-radio slot="start" value="burger"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>Kebab</ion-label>
+      <ion-radio slot="start" value="kebab"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>Asian</ion-label>
+      <ion-radio slot="start" value="asian"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>Pizza</ion-label>
+      <ion-radio slot="start" value="pizza"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>Bar</ion-label>
+      <ion-radio slot="start" value="bar"></ion-radio>
+    </ion-item>
+
+    
+    <ion-item class="radio">
+      <ion-label>Buffet</ion-label>
+      <ion-radio slot="start" value="Buffet"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<p class="error"> Select a type </p>
+
+
+<ion-list class="lista_precio">
+  <ion-radio-group [(ngModel)]="price">
+    <ion-list-header>
+      Price:
+    </ion-list-header>
+
+    <ion-item class="radio">
+      <ion-label>15 - 30 €</ion-label>
+      <ion-radio slot="start" value="15-30"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>30 - 45 €</ion-label>
+      <ion-radio slot="start" value="30-45"></ion-radio>
+    </ion-item>
+
+    <ion-item class="radio">
+      <ion-label>> 45 €</ion-label>
+      <ion-radio slot="start" value="45"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<p class="error"> Select a price </p>
+
+<ion-item class="comments">
+  <ion-textarea [(ngModel)]="comments" rows="6" cols="20" placeholder="Comments:"></ion-textarea>
+</ion-item>
+
+<ion-item class="item_visited">
+<ion-checkbox color="primary" (ionChange)="ionChange($event.detail.checked, i)"></ion-checkbox>
+<ion-label class="visited"> Visited </ion-label>
+</ion-item>
+
+<ion-item *ngIf="visited" class="comments">
+  <ion-textarea [(ngModel)]="opinion" rows="6" cols="20" placeholder="Opinion:"></ion-textarea>
+</ion-item>
+
+<ion-item *ngIf="visited" class="item_favorite">
+  <ion-checkbox color="primary" (ionChange)="ionChange1($event.detail.checked, i)"></ion-checkbox>
+  <ion-label class="favorite"> Favorite </ion-label>
+  </ion-item>
+
+<ion-button (click)='add_restaurant()' expand='block'> Add restaurant </ion-button>
+
+</ion-content>

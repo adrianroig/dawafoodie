@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Back'" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="email">
+    <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+
+  <ion-item class="password">
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <p class="check">{{error}}</p>
+
+
+  <ion-button expand="block" (click)="login()">Login</ion-button>
+</ion-content>

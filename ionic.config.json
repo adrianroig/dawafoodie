@@ -1,0 +1,7 @@
+{
+  "name": "dawafoodie",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
